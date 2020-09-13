@@ -9,6 +9,7 @@
     <title>Паспорт безопасности - разработка и согласование</title>
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/all.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -16,12 +17,12 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <div class="header__logo">
                     <img src="/assets/img/logo.png" alt="">
                 </div>
             </div>
-            <div class="col-lg-7 col-6">
+            <div class="col-lg-7 col-md-9 col-6">
                 <ul class="header__menu">
                     <li>
                         <a href="#order" class="header__link">Заказать</a>
@@ -35,6 +36,9 @@
                     <li>
                         <a href="#contacts" class="header__link">Контакты</a>
                     </li>
+                    <li class="phone--mobile">
+                        <a href="tel:84993504907" class="header__phone">8 (499) 350-49-07</a>
+                    </li>
                 </ul>
 
                 <div class="burger"><span></span></div>
@@ -47,7 +51,7 @@
     </div>
 </header>
 
-<section class="top">
+<section class="top" id="order">
     <div class="top__inner">
         <h1>Паспорт безопасности объекта</h1>
         <div class="subtitle">от 30 000 рублей</div>
@@ -81,11 +85,568 @@
                     <input type="text" class="form-control">
                     <input type="submit" class="btn btn-green" value="Получить консультацию!">
                 </div>
+                <div class="form-group agreement">
+                    <input id="agreementCheckbox" type="checkbox" class="top__checkbox">
+                    <label for="agreementCheckbox">Даю согласие на <span class="rules-link" data-toggle="modal" data-target="#exampleModal">обработку персональных данных</span></label>
+                </div>
             </form>
+        </div>
+
+        <div class="top__bottom">
+            <div>Как разрабатывается паспорт безопасности?</div>
+            <svg width="50" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.688 490.688" style="enable-background:new 0 0 490.688 490.688;" xml:space="preserve">
+                <path style="fill:#FFC107;" d="M472.328,120.529L245.213,347.665L18.098,120.529c-4.237-4.093-10.99-3.975-15.083,0.262
+                  c-3.992,4.134-3.992,10.687,0,14.82l234.667,234.667c4.165,4.164,10.917,4.164,15.083,0l234.667-234.667
+                  c4.237-4.093,4.354-10.845,0.262-15.083c-4.093-4.237-10.845-4.354-15.083-0.262c-0.089,0.086-0.176,0.173-0.262,0.262
+                  L472.328,120.529z"/>
+                                <path d="M245.213,373.415c-2.831,0.005-5.548-1.115-7.552-3.115L2.994,135.633c-4.093-4.237-3.975-10.99,0.262-15.083
+                  c4.134-3.992,10.687-3.992,14.82,0l227.136,227.115l227.115-227.136c4.093-4.237,10.845-4.354,15.083-0.262
+                  c4.237,4.093,4.354,10.845,0.262,15.083c-0.086,0.089-0.173,0.176-0.262,0.262L252.744,370.279
+                  C250.748,372.281,248.039,373.408,245.213,373.415z"/>
+            </svg>
         </div>
     </div>
 
 </section>
+
+<section class="about" id="details">
+    <div class="container">
+        <div class="about__tab" id="main">
+            <h2>Что такое паспорт безопасности?</h2>
+            <p>
+                Паспорт безопасности является кратким руководством  по объекту при возникновении чрезвычайных ситуаций или угрозе террористического акта. Он разрабатывается в нескольких экземплярах и хранится в территориальных силовых ведомствах.
+            </p>
+            <p>
+                Объекты, подлежащие антитеррористической паспортизации:
+            </p>
+            <ul class="about__list">
+                <li>
+                    <div class="about__text">
+                        Места массового пребывания людей - постановление Правительства РФ №272 от 25.03.2015 (в ред. согласно ПП РФ №1040 от 14.10.2016)
+                    </div>
+                    <div class="about__link" data-target="#mmpl">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="about__text">
+                        Торговые объекты - постановление Правительства РФ №1273 от 19.10.2017
+                    </div>
+                    <div class="about__link" data-target="#trade">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="about__text">
+                        Комнаты хранения оружия - постановление Правительства РФ №272 от 25.03.2015 (в ред. согласно ПП РФ №1040 от 14.10.2016) - объекты, подлежащие обязательной охране войсками Национальной гвардии
+                    </div>
+                    <div class="about__link" data-target="#weapon">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="about__text">
+                        Спортивные сооружения и другие объекты спорта - постановление Правительства РФ №202 от 06.03.2015
+                    </div>
+                    <div class="about__link" data-target="#sport">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="about__text">
+                        Объекты сферы культуры - постановление Правительства РФ №176 от 11.02.2017
+                    </div>
+                    <div class="about__link" data-target="#culture">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="about__text">
+                        Гостиницы и иные средства размещения - постановление Правительства РФ №447 от 14.04.2017
+                    </div>
+                    <div class="about__link" data-target="#hotel">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="about__text" data-target="#health">
+                        Объекты сферы здравоохранения - постановление Правительства РФ №8 от 13.01.2017
+                    </div>
+                    <div class="about__link">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="about__text">
+                        Объекты сферы образования - постановление Правительства РФ №1235 от 07.10.2017
+                    </div>
+                    <div class="about__link" data-target="#edu">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Узнать подробности</span>
+                    </div>
+
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </li>
+            </ul>
+
+            <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
+        </div>
+        <div class="about__tab" id="mmpl">
+            <h2>Что такое паспорт безопасности места массового пребывания людей?</h2>
+            <p>
+                Паспорт безопасности места массового пребывания людей (ММПЛ) разрабатывается в 6-ти экземплярах согласно постановления Правительства РФ №272 от 25.03.2015 года (с правками согласно ПП РФ №1040 от 16.10.2016 года) и согласуется в территориальных органах МЧС, МВД, Росгвардии и ФСБ.
+            </p>
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="mmpl__col">
+                        <div>
+                            <div>Паспорт безопасности необходим:</div>
+                            <ul class="rund-list">
+                                <li>бизнес центрам;</li>
+                                <li>ресторанам и кафе;</li>
+                                <li>развлекательным центрам;</li>
+                                <li>банным комплексам;</li>
+                                <li>крупным торговым объектам.</li>
+                            </ul>
+                            <div>И любым другим объектам, на территории которых можно разместить от 50-ти человек (согласно ПП РФ №272 от 25.03.2015 года).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="mmpl__col">
+                        <div>
+                            <p>Основные требования к ММПЛ:</p>
+                            <div>Для ММПЛ 3-й категории (до 200 человек):</div>
+                            <ul class="rund-list">
+                                <li>Хранение видеозаписей с камер наблюдения не менее 30-ти дней.</li>
+                                <li>Наличие физической охраны в лице ЧОПа или ЧОО.</li>
+                            </ul>
+                            <div>Для ММПЛ 1-й и 2-й категории (от 201 человека):</div>
+                            <ul class="rund-list">
+                                <li>Хранение видеозаписей с камер наблюдения не менее 30-ти дней.</li>
+                                <li>Наличие физической охраны в лице ЧОПа или ЧОО.</li>
+                                <li>Информационные таблички с дежурными телефонами территориальных силовых ведомств.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
+                </div>
+            </div>
+
+            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+        </div>
+
+        <div class="about__tab" id="trade">
+            <h2>Что такое паспорт безопасности торгового объекта?</h2>
+            <p>
+                Паспорт безопасности торгового объекта разрабатывается в 2-х экземплярах согласно постановления Правительства РФ № 1273 от 19.10.2017 года и согласуется в территориальных органах Росгвардии, МЧС и ФСБ.
+            </p>
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="mmpl__col">
+                        <div>
+                            <div>Основные требования к торговым объектам</div>
+                            <ul class="rund-list">
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                            <div>Для торговых объектов 2-й категории и выше:</div>
+                            <ul class="rund-list">
+                                <li>Наличие охраны в лице ЧОПа или ЧОО.</li>
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                            <div>Для торговых объектов 1-й категории:</div>
+                            <ul class="rund-list">
+                                <li>Наличие охраны в лице ЧОПа или ЧОО.</li>
+                                <li>Наличие кнопки экстренного вызова полиции или наряда ЧОПа.</li>
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
+                </div>
+            </div>
+
+            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+        </div>
+
+        <div class="about__tab" id="weapon">
+            <h2>Что такое паспорт безопасности комнаты хранения оружия?</h2>
+            <p>
+                Паспорт безопасности комнаты хранения оружия (КХО) разрабатывается в 5-ти экземплярах согласно постановления Правительства РФ № 272 от 25.03.2015 года (с правками согласно ПП РФ №1040 от 16.10.2016 года) и согласуется в территориальных органах МЧС, Росгвардии и ФСБ.
+            </p>
+            <div class="row">
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
+                </div>
+            </div>
+
+            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+        </div>
+
+        <div class="about__tab" id="sport">
+            <h2>Что такое паспорт безопасности объекта спорта?</h2>
+            <p>
+                Паспорт безопасности объекта спорта разрабатывается в 3-ех экземплярах согласно постановления Правительства РФ № 202 от 06.03.2015 года и согласуется в территориальных органах МВД и ФСБ.
+            </p>
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="mmpl__col">
+                        <div>
+                            <div>Основные требования к объектам спорта:</div>
+                            <ul class="rund-list">
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                            <div>Для объектов спорта 3-й категории и выше:</div>
+                            <ul class="rund-list">
+                                <li>Наличие ручных  металлоискателей.</li>
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                            <div>Для объектов спорта 2-й категории и выше:</div>
+                            <ul class="rund-list">
+                                <li>Наличие ручных либо стационарных металлоискателей.</li>
+                                <li>Соблюдение контрольно-пропускного режима.</li>
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                            <div>Для объектов спорта 1-й категории:</div>
+                            <ul class="rund-list">
+                                <li>Наличие системы контроля управления доступом.</li>
+                                <li>Видеонаблюдение с возможностью идентификации лиц посетителей.</li>
+                                <li>Соблюдение контрольно-пропускного режима.</li>
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
+                </div>
+            </div>
+
+            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+        </div>
+
+        <div class="about__tab" id="culture">
+            <h2>Что такое паспорт безопасности объекта культуры?</h2>
+            <p>
+                Паспорт безопасности объекта культуры разрабатывается в 2-ух экземплярах согласно постановления Правительства РФ № 176 от 11.02.2017 года  и согласуется в территориальных органах МВД, Росгвардии и ФСБ.
+            </p>
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="mmpl__col">
+                        <div>
+                            <div>Основные требования к объектам культуры:</div>
+                            <ul class="rund-list">
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней (при наличии)..</li>
+                            </ul>
+                            <div>Для объектов культуры 2-й категории и выше:</div>
+                            <ul class="rund-list">
+                                <li>Наличие охраны в лице ЧОПа или ЧОО.</li>
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней (при наличии).</li>
+                            </ul>
+                            <div>Для объектов культуры 1-й категории и выше:</div>
+                            <ul class="rund-list">
+                                <li>Наличие системы видеонаблюдения.</li>
+                                <li>Дополнительное ограждение критических элементов объекта.</li>
+                                <li>Наличие охраны в лице ЧОПа или ЧОО.</li>
+                                <li>Хранение видеозаписей с камер не менее 30-ти дней.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__link about__download" download>
+                        <i class="fa fa-download"></i>
+                        <span>Скачать постановление</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-12 mmpl__col">
+                    <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
+                </div>
+            </div>
+
+            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+        </div>
+    </div>
+</section>
+
+<section class="passport">
+    <div class="passport__inner">
+        <div class="container">
+            <h2>Как разрабатывается паспорт безопасности?</h2>
+            <h3>1 этап - Проведение категорирования объекта</h3>
+            <p>
+                Категорирование – созыв межведомственной комиссии для присвоения категории объекта. Результатом комиссионного обследования является оформление акта категорирования, который подписывается всеми представителями территориальных силовых структур, и, в свою очередь, является основанием для разработки паспорта безопасности и его неотъемлемой частью.
+            </p>
+            <h3>2 этап - Разработка паспорта безопасности</h3>
+            <ol>
+                <li>Сбор необходимых данных по объекту.</li>
+                <li>Разработка текстовой части.</li>
+                <li>Разработка схемы охраны объекта и других необходимых чертежей.</li>
+                <li>Разработка инструкций по действиям персонала и посетителей объекта в случае чрезвычайных ситуаций.</li>
+                <li>Изготовление паспорта безопасности в необходимом кол-ве экземпляров.</li>
+            </ol>
+            <h3>3 этап - Согласование паспорта безопасности</h3>
+            <p>
+                Паспорт безопасности согласовывается во всех уполномоченных ведомствах. В зависимости от территориального расположения и присвоенной категории, паспорт подписывается как в районных  и окружных подразделениях силовых ведомств, так и в их Главных управлениях.
+            </p>
+
+            <div class="passport__like">
+                <svg width="24" height="24" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <path d="M512,304c0-12.821-5.099-24.768-13.888-33.579c9.963-10.901,15.04-25.515,13.653-40.725
+                          c-2.496-27.115-26.923-48.363-55.637-48.363H324.352c6.528-19.819,16.981-56.149,16.981-85.333c0-46.272-39.317-85.333-64-85.333
+                          c-22.144,0-37.995,12.48-38.656,12.992c-2.539,2.027-4.011,5.099-4.011,8.341v72.341L173.205,237.44l-2.539,1.301v-4.075
+                          c0-5.888-4.779-10.667-10.667-10.667H53.333C23.915,224,0,247.915,0,277.333V448c0,29.419,23.915,53.333,53.333,53.333h64
+                          c23.061,0,42.773-14.72,50.197-35.264C185.28,475.2,209.173,480,224,480h195.819c23.232,0,43.563-15.659,48.341-37.248
+                          c2.453-11.136,1.024-22.336-3.84-32.064c15.744-7.915,26.347-24.192,26.347-42.688c0-7.552-1.728-14.784-4.992-21.312
+                          C501.419,338.752,512,322.496,512,304z M467.008,330.325c-4.117,0.491-7.595,3.285-8.917,7.232
+                          c-1.301,3.947-0.213,8.277,2.816,11.136c5.419,5.099,8.427,11.968,8.427,19.307c0,13.461-10.176,24.768-23.637,26.325
+                          c-4.117,0.491-7.595,3.285-8.917,7.232c-1.301,3.947-0.213,8.277,2.816,11.136c7.019,6.613,9.835,15.893,7.723,25.451
+                          c-2.624,11.904-14.187,20.523-27.499,20.523H224c-17.323,0-46.379-8.128-56.448-18.219c-3.051-3.029-7.659-3.925-11.627-2.304
+                          c-3.989,1.643-6.592,5.547-6.592,9.856c0,17.643-14.357,32-32,32h-64c-17.643,0-32-14.357-32-32V277.333c0-17.643,14.357-32,32-32
+                          h96V256c0,3.691,1.92,7.125,5.077,9.088c3.115,1.877,7.04,2.069,10.368,0.448l21.333-10.667c2.155-1.067,3.883-2.859,4.907-5.056
+                          l64-138.667c0.64-1.408,0.981-2.944,0.981-4.48V37.781C260.437,35.328,268.139,32,277.333,32C289.024,32,320,61.056,320,96
+                          c0,37.547-20.437,91.669-20.629,92.203c-1.237,3.264-0.811,6.955,1.173,9.856c2.005,2.88,5.291,4.608,8.789,4.608h146.795
+                          c17.792,0,32.896,12.736,34.389,28.992c1.131,12.16-4.715,23.723-15.189,30.187c-3.264,2.005-5.205,5.632-5.056,9.493
+                          s2.368,7.317,5.781,9.088c9.024,4.587,14.613,13.632,14.613,23.573C490.667,317.461,480.491,328.768,467.008,330.325z"/>
+                      </g>
+                    </g>
+                                        <g>
+                      <g>
+                        <path d="M160,245.333c-5.888,0-10.667,4.779-10.667,10.667v192c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667
+                          V256C170.667,250.112,165.888,245.333,160,245.333z"/>
+                      </g>
+                    </g>
+                </svg>
+                <span>Мы разрабатываем паспорт безопасности в течении 3 рабочих дней</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="clients" id="clients">
+    <div class="container">
+        <h2>Наши клиенты</h2>
+
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <div class="clients__item">
+                    <div class="clients__img" style="background-image: url(/assets/img/client1.png)"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="clients__item">
+                    <div class="clients__img" style="background-image: url(/assets/img/client2.jpg)"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="clients__item">
+                    <div class="clients__img" style="background-image: url(/assets/img/client3.jpg)"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="clients__item">
+                    <div class="clients__img" style="background-image: url(/assets/img/client4.jpg)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="adress" id="contacts">
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1588.4610281373843!2d37.66384385173934!3d55.73377677850205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54adc714d6b65%3A0xf80b2b885cd2500b!2z0JzQsNGA0LrRgdC40YHRgtGB0LrQsNGPINGD0LsuLCAzNNC6MTAsINCc0L7RgdC60LLQsCwgMTA5MTQ3!5e0!3m2!1sru!2sru!4v1600018063512!5m2!1sru!2sru" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <div class="adress__adress">
+        <div class="adress__inner">
+            <div class="adress__title">Наш адрес</div>
+            <div>Москва, ул.Марксистская, д.34, к.10, офис 309</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer__row">
+            <div class="footer__logo">
+                <img src="/assets/img/logo.png" alt="">
+            </div>
+            <div class="footer__info">
+                <div class="footer__company">ООО "Волхв"</div>
+                <div class="footer__adress">Москва, ул.Марксистская, д.34, к.10, офис 309</div>
+                <a href="mailto:info@progressiagroup.ru" class="footer__mail">info@progressiagroup.ru</a>
+                <a href="tel:84993504907" class="footer__phone">8 (499) 350-49-07</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Политика конфиденциальности</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    ООО "ПРОГРЕССИЯ ГРУПП" (далее progressiagroup.ru или Администрация) обязуется сохранять Вашу конфиденциальность в сети Интернет. Настоящая Политика Конфиденциальности, рассказывает о том, как собираются, обрабатываются и хранятся Ваши личные данные. Администрация уделяет большое внимание защите личной информации пользователей. Пользуюсь сайтом progressiagroup.ru, пользователь тем самым дает согласие на применение правил сбора и использования данных, изложенных в настоящем документе.
+                </p>
+
+                <p>
+                    <b>Если Вы не согласны с условиями нашей политики конфиденциальности, не используйте сайт progressiagroup.ru!</b>
+                </p>
+                <p>
+                    Собираемая информация
+                    <br>Администрация сайта может собирать следующую информацию о пользователях сайта:
+                    <br>- Фамилия, Имя, Отчество
+                    <br>- Номер телефона
+                    <br>- Прочая информация
+                </p>
+                <p>
+                    Использование информации
+                    <br>Ниже описаны некоторые способы использования личной информации пользователя:
+                    <br>- для внутреннего отчета
+                    <br>- для предоставления информации и услуг, которые запрашивает пользователь
+                    <br>- для формирования статистических данных
+                </p>
+                <p>
+                    Раскрытие информации
+                    <br>Администрация не продает личные данные пользователя и не передает их третьим лицам без согласия на то пользователя.
+                    <br>Далее, описаны некоторые случаи передачи личной информации пользователя:
+                </p>
+                <p>
+                    - в случаях, если это требуется органам спецслужб или если это требует законодательство
+                </p>
+                <p>
+                    Прочая информация
+                    <br>Дети любых возрастов могут беспрепятственно пользоваться данным сайтом.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalPenalty" tabindex="-1" role="dialog" aria-labelledby="modalPenalty" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Штрафы за отсутствие паспорта безопасности</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Ст. 19.5.1 КоАП РФ «Неисполнение решения сформированного по решению Президента Российской Федерации на федеральном уровне коллегиального органа, координирующего и организующего деятельность федеральных органов исполнительной власти, органов исполнительной власти субъектов Российской Федерации и органов местного самоуправления по противодействию терроризму, которое принято в пределах компетенции указанного коллегиального органа», - влечет наложение административного штрафа
+                </p>
+                <p>
+                    на граждан:
+                    <br>в размере от 3 000 (трех тысяч) до 5 000 (пяти тысяч) рублей;
+                </p>
+                <p>
+                    на должностных лиц:
+                    <br>от 30 000 (тридцати тысяч) до 50 000 (пятидесяти тысяч) рублей или дисквалификацию на срок от одного года до трех лет
+                </p>
+                <p>
+                    на юридических лиц:
+                    <br>от 300 000 (трехсот тысяч)
+                    <br>до  1 000 000 (одного миллиона) рублей
+                    <br>или административное приостановление деятельности на срок до 90 (девяноста) суток.
+                </p>
+                <p>
+                    В случае наступления террористического акта повлекшего смерть или причинение тяжкого вреда здоровью, должностное лицо привлекается к уголовной ответственности. Нарушение требований антитеррористической защищенности мест с массовым пребыванием людей может быть совершено как путем действия, так и бездействия. Таким образом, отсутствие Паспорта безопасности не освобождает организацию от административной или уголовной ответственности, которая подразумевает срок лишения свободы до 10 лет (Ст. 167, 215 и 330 УК РФ).
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
