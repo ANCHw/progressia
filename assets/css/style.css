@@ -652,6 +652,16 @@ footer {
     margin: 0 auto;
 }
 
+.about__attention {
+    display: flex;
+    align-items: center;
+}
+
+.about__attention svg {
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
 /*--------------------------------------------------------------------------------------------------------------*/
 
 @media (max-width: 1199px) {
@@ -745,6 +755,10 @@ footer {
     
     .about__link {
         width: 160px;
+    }
+    
+    .mmpl__col .about__link {
+        margin-bottom: 12px;
     }
 }
 
