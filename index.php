@@ -1,3 +1,57 @@
+<?php
+    $phone = trim($_POST['phone']);
+    
+    // указываем адрес отправителя, можно указать адрес на домене Вашего сайта
+    $fromMail = 'admin@progressia.ru';
+    $fromName = 'progressia.ru Форма';
+    
+    // Сюда введите Ваш email
+    $emailTo = 'mard.mtx@gmail.com';
+    $subject = 'Форма обратной связи на php';
+    $subject = '=?utf-8?b?'. base64_encode($subject) .'?=';
+    $headers = "Content-type: text/plain; charset=\"utf-8\"\r\n";
+    $headers .= "From: ". $fromName ." <". $fromMail ."> \r\n";
+    
+    // тело письма
+    $body = "Получено письмо с сайта progressia.ru \nТелефон: $phone ";
+    
+    // сообщение будет отправлено в случае, если поле с номером телефона не пустое
+    /*if (strlen($phone) > 0) {
+        $mail = mail($emailTo, $subject, $body, $headers, '-f'. $fromMail );
+    }*/
+    
+    class Alarmer
+    {
+        
+        /**
+         * Отправляет уведомление
+         * @param string $key - ваш API-KEY
+         * @param string $message - сообщение
+         */
+        static public function send($key, $message)
+        {
+            $ch = curl_init("https://alarmerbot.ru/");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, array(
+                "key" => $key,
+                "message" => $message,
+            ));
+            curl_exec($ch);
+            curl_close($ch);
+        }
+        
+    }
+    
+    if (strlen($phone) > 0) {
+        Alarmer::send('67a1fc-89366c-5bc98d', 'Заявка от'.$phone);
+    }
+    
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -40,10 +94,10 @@
                         <a href="tel:84993504907" class="header__phone">8 (499) 350-49-07</a>
                     </li>
                 </ul>
-
+                
                 <div class="burger"><span></span></div>
             </div>
-
+            
             <div class="col-lg-3 d-lg-block d-none">
                 <a href="tel:84993504907" class="header__phone">8 (499) 350-49-07</a>
             </div>
@@ -55,7 +109,7 @@
     <div class="top__inner">
         <h1>Паспорт безопасности объекта</h1>
         <div class="subtitle">от 30 000 рублей</div>
-
+        
         <div class="statistic">
             <div class="statistic__title">Изготовлено паспортов:</div>
             <div class="statistic__row">
@@ -77,12 +131,12 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="top__form">
-            <form action="">
+            <form action="index.php" method="post">
                 <div class="form__title">Наши специалисты проводят консультации совершенно бесплатно!</div>
                 <div class="form-group">
-                    <input type="text" class="form-control">
+                    <input type="text" name="phone" class="form-control" placeholder="Ваш телефон">
                     <input type="submit" class="btn btn-green" value="Получить консультацию!">
                 </div>
                 <div class="form-group agreement">
@@ -91,7 +145,7 @@
                 </div>
             </form>
         </div>
-
+        
         <div class="top__bottom">
             <div>Как разрабатывается паспорт безопасности?</div>
             <svg width="50" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.688 490.688" style="enable-background:new 0 0 490.688 490.688;" xml:space="preserve">
@@ -99,7 +153,7 @@
                   c-3.992,4.134-3.992,10.687,0,14.82l234.667,234.667c4.165,4.164,10.917,4.164,15.083,0l234.667-234.667
                   c4.237-4.093,4.354-10.845,0.262-15.083c-4.093-4.237-10.845-4.354-15.083-0.262c-0.089,0.086-0.176,0.173-0.262,0.262
                   L472.328,120.529z"/>
-                                <path d="M245.213,373.415c-2.831,0.005-5.548-1.115-7.552-3.115L2.994,135.633c-4.093-4.237-3.975-10.99,0.262-15.083
+                <path d="M245.213,373.415c-2.831,0.005-5.548-1.115-7.552-3.115L2.994,135.633c-4.093-4.237-3.975-10.99,0.262-15.083
                   c4.134-3.992,10.687-3.992,14.82,0l227.136,227.115l227.115-227.136c4.093-4.237,10.845-4.354,15.083-0.262
                   c4.237,4.093,4.354,10.845,0.262,15.083c-0.086,0.089-0.173,0.176-0.262,0.262L252.744,370.279
                   C250.748,372.281,248.039,373.408,245.213,373.415z"/>
@@ -128,7 +182,7 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
@@ -142,7 +196,7 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
@@ -156,7 +210,7 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
@@ -170,7 +224,7 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
@@ -184,7 +238,7 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
@@ -198,7 +252,7 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
@@ -212,7 +266,7 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
@@ -226,14 +280,14 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>Узнать подробности</span>
                     </div>
-
+                    
                     <a href="" class="about__link about__download" download>
                         <i class="fa fa-download"></i>
                         <span>Скачать постановление</span>
                     </a>
                 </li>
             </ul>
-
+            
             <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
         </div>
         <div class="about__tab" id="mmpl">
@@ -276,7 +330,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col-lg-6 col-12 mmpl__col">
                     <a href="" class="about__link about__download" download>
@@ -288,10 +342,10 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
-
+        
         <div class="about__tab" id="trade">
             <h2>Что такое паспорт безопасности торгового объекта?</h2>
             <p>
@@ -331,10 +385,10 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
-
+        
         <div class="about__tab" id="weapon">
             <h2>Что такое паспорт безопасности комнаты хранения оружия?</h2>
             <p>
@@ -351,10 +405,10 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
-
+        
         <div class="about__tab" id="sport">
             <h2>Что такое паспорт безопасности объекта спорта?</h2>
             <p>
@@ -401,10 +455,10 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
-
+        
         <div class="about__tab" id="culture">
             <h2>Что такое паспорт безопасности объекта культуры?</h2>
             <p>
@@ -445,10 +499,10 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
-
+        
         <div class="about__tab" id="hotel">
             <h2>Что такое паспорт безопасности гостиницы?</h2>
             <p>
@@ -497,10 +551,10 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
-
+        
         <div class="about__tab" id="health">
             <h2>Что такое паспорт безопасности объекта здравоохранения?</h2>
             <p>
@@ -542,10 +596,10 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
-
+        
         <div class="about__tab" id="edu">
             <h2>Что такое паспорт безопасности объекта образования?</h2>
             <p>
@@ -587,7 +641,7 @@
                     <a href="" class="about__penalty" data-toggle="modal" data-target="#modalPenalty">Штрафы за отсутствие паспорта безопасности</a>
                 </div>
             </div>
-
+            
             <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
         </div>
     </div>
@@ -613,12 +667,12 @@
             <p>
                 Паспорт безопасности согласовывается во всех уполномоченных ведомствах. В зависимости от территориального расположения и присвоенной категории, паспорт подписывается как в районных  и окружных подразделениях силовых ведомств, так и в их Главных управлениях.
             </p>
-
+            
             <div class="passport__like">
                 <svg width="24" height="24" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                     <g>
-                      <g>
-                        <path d="M512,304c0-12.821-5.099-24.768-13.888-33.579c9.963-10.901,15.04-25.515,13.653-40.725
+                        <g>
+                            <path d="M512,304c0-12.821-5.099-24.768-13.888-33.579c9.963-10.901,15.04-25.515,13.653-40.725
                           c-2.496-27.115-26.923-48.363-55.637-48.363H324.352c6.528-19.819,16.981-56.149,16.981-85.333c0-46.272-39.317-85.333-64-85.333
                           c-22.144,0-37.995,12.48-38.656,12.992c-2.539,2.027-4.011,5.099-4.011,8.341v72.341L173.205,237.44l-2.539,1.301v-4.075
                           c0-5.888-4.779-10.667-10.667-10.667H53.333C23.915,224,0,247.915,0,277.333V448c0,29.419,23.915,53.333,53.333,53.333h64
@@ -634,13 +688,13 @@
                           c0,37.547-20.437,91.669-20.629,92.203c-1.237,3.264-0.811,6.955,1.173,9.856c2.005,2.88,5.291,4.608,8.789,4.608h146.795
                           c17.792,0,32.896,12.736,34.389,28.992c1.131,12.16-4.715,23.723-15.189,30.187c-3.264,2.005-5.205,5.632-5.056,9.493
                           s2.368,7.317,5.781,9.088c9.024,4.587,14.613,13.632,14.613,23.573C490.667,317.461,480.491,328.768,467.008,330.325z"/>
-                      </g>
+                        </g>
                     </g>
-                                        <g>
-                      <g>
-                        <path d="M160,245.333c-5.888,0-10.667,4.779-10.667,10.667v192c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667
+                    <g>
+                        <g>
+                            <path d="M160,245.333c-5.888,0-10.667,4.779-10.667,10.667v192c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667
                           V256C170.667,250.112,165.888,245.333,160,245.333z"/>
-                      </g>
+                        </g>
                     </g>
                 </svg>
                 <span>Мы разрабатываем паспорт безопасности в течении 3 рабочих дней</span>
@@ -652,7 +706,7 @@
 <section class="clients" id="clients">
     <div class="container">
         <h2>Наши клиенты</h2>
-
+        
         <div class="row">
             <div class="col-lg-6 col-12">
                 <div class="clients__item">
@@ -720,7 +774,7 @@
                 <p>
                     ООО "ПРОГРЕССИЯ ГРУПП" (далее progressiagroup.ru или Администрация) обязуется сохранять Вашу конфиденциальность в сети Интернет. Настоящая Политика Конфиденциальности, рассказывает о том, как собираются, обрабатываются и хранятся Ваши личные данные. Администрация уделяет большое внимание защите личной информации пользователей. Пользуюсь сайтом progressiagroup.ru, пользователь тем самым дает согласие на применение правил сбора и использования данных, изложенных в настоящем документе.
                 </p>
-
+                
                 <p>
                     <b>Если Вы не согласны с условиями нашей политики конфиденциальности, не используйте сайт progressiagroup.ru!</b>
                 </p>
