@@ -44,7 +44,7 @@
     }
     
     if (strlen($phone) > 0) {
-        Alarmer::send('67a1fc-89366c-5bc98d', 'Заявка от'.$phone);
+        Alarmer::send('67a1fc-89366c-5bc98d', 'Заявка от '.$phone);
     }
     
 
