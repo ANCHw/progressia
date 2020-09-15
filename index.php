@@ -1,53 +1,38 @@
 <?php
-    $phone = trim($_POST['phone']);
-    
-    // указываем адрес отправителя, можно указать адрес на домене Вашего сайта
-    $fromMail = 'admin@progressia.ru';
-    $fromName = 'progressia.ru Форма';
-    
-    // Сюда введите Ваш email
-    $emailTo = 'mard.mtx@gmail.com';
-    $subject = 'Форма обратной связи на php';
-    $subject = '=?utf-8?b?'. base64_encode($subject) .'?=';
-    $headers = "Content-type: text/plain; charset=\"utf-8\"\r\n";
-    $headers .= "From: ". $fromName ." <". $fromMail ."> \r\n";
-    
-    // тело письма
-    $body = "Получено письмо с сайта progressia.ru \nТелефон: $phone ";
-    
-    // сообщение будет отправлено в случае, если поле с номером телефона не пустое
-    /*if (strlen($phone) > 0) {
-        $mail = mail($emailTo, $subject, $body, $headers, '-f'. $fromMail );
-    }*/
-    
-    class Alarmer
-    {
-        
-        /**
-         * Отправляет уведомление
-         * @param string $key - ваш API-KEY
-         * @param string $message - сообщение
-         */
-        static public function send($key, $message)
-        {
-            $ch = curl_init("https://alarmerbot.ru/");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 3);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, array(
-                "key" => $key,
-                "message" => $message,
-            ));
-            curl_exec($ch);
-            curl_close($ch);
-        }
-        
-    }
-    
-    if (strlen($phone) > 0) {
-        Alarmer::send('67a1fc-89366c-5bc98d', 'Заявка от '.$phone);
-    }
-    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $phone = trim($_POST['phone']);
+        $check = $_POST['check'] ?? 0;
 
+
+        class Alarmer
+        {
+
+            /**
+             * Отправляет уведомление
+             * @param string $key - ваш API-KEY
+             * @param string $message - сообщение
+             */
+            static public function send($key, $message)
+            {
+                $ch = curl_init("https://alarmerbot.ru/");
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, array(
+                    "key" => $key,
+                    "message" => $message,
+                ));
+                curl_exec($ch);
+                curl_close($ch);
+            }
+
+        }
+
+        if (strlen($phone) > 0 && preg_match('/^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/', $phone) && $check !== 0) {
+            Alarmer::send('35f401-ab1316-8ff898', 'Заявка от '.$phone);
+        }
+    }
+
+//    var_dump($_POST);
 ?>
 
 
@@ -140,7 +125,7 @@
                     <input type="submit" class="btn btn-green" value="Получить консультацию!">
                 </div>
                 <div class="form-group agreement">
-                    <input id="agreementCheckbox" type="checkbox" class="top__checkbox">
+                    <input id="agreementCheckbox" name="check" value="1" type="checkbox" class="top__checkbox">
                     <label for="agreementCheckbox">Даю согласие на <span class="rules-link" data-toggle="modal" data-target="#exampleModal">обработку персональных данных</span></label>
                 </div>
             </form>
