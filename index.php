@@ -82,7 +82,7 @@
             <form action="alarm.php" method="post">
                 <div class="form__title">Наши специалисты проводят консультации совершенно бесплатно!</div>
                 <div class="form-group">
-                    <input type="text" name="phone" class="form-control" placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000" required>
+                    <input type="text" name="phone" class="form-control" placeholder="+7" data-mask="+7 (000) 000-0000" required>
                     <input type="submit" class="btn btn-green" value="Получить консультацию!">
                 </div>
                 <div class="form-group agreement">
