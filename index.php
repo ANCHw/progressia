@@ -1,39 +1,4 @@
-<?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $phone = trim($_POST['phone']);
-        $check = $_POST['check'] ?? 0;
 
-
-        class Alarmer
-        {
-
-            /**
-             * Отправляет уведомление
-             * @param string $key - ваш API-KEY
-             * @param string $message - сообщение
-             */
-            static public function send($key, $message)
-            {
-                $ch = curl_init("https://alarmerbot.ru/");
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
-                curl_setopt($ch, CURLOPT_TIMEOUT, 3);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, array(
-                    "key" => $key,
-                    "message" => $message,
-                ));
-                curl_exec($ch);
-                curl_close($ch);
-            }
-
-        }
-
-        if (strlen($phone) > 0 && preg_match('/^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/', $phone) && $check !== 0) {
-            Alarmer::send('35f401-ab1316-8ff898', 'Заявка от '.$phone);
-        }
-    }
-
-//    var_dump($_POST);
-?>
 
 
 
@@ -118,14 +83,14 @@
         </div>
         
         <div class="top__form">
-            <form action="index.php" method="post">
+            <form action="alarm.php" method="post">
                 <div class="form__title">Наши специалисты проводят консультации совершенно бесплатно!</div>
                 <div class="form-group">
-                    <input type="text" name="phone" class="form-control" placeholder="Ваш телефон">
+                    <input type="text" name="phone" class="form-control" placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000" required>
                     <input type="submit" class="btn btn-green" value="Получить консультацию!">
                 </div>
                 <div class="form-group agreement">
-                    <input id="agreementCheckbox" name="check" value="1" type="checkbox" class="top__checkbox">
+                    <input id="agreementCheckbox" name="check" value="1" type="checkbox" class="top__checkbox" required>
                     <label for="agreementCheckbox">Даю согласие на <span class="rules-link" data-toggle="modal" data-target="#exampleModal">обработку персональных данных</span></label>
                 </div>
             </form>
@@ -834,6 +799,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="  crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mask.min.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

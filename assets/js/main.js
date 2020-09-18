@@ -7,6 +7,7 @@ $(function(){
 });
 
 $(document).ready(function () {
+    
     $('.burger').click(function () {
         if ($('.header__menu').hasClass('active')) {
             $('.header__menu').removeClass('active');
