@@ -11,6 +11,27 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/fontawesome/all.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
+    
+<!-- PrimeGate counter -->
+		<script>
+        (function () {
+            var pg = document.createElement('script');
+            var protocol = 'https:' == document.location.protocol ? 'https://' : 'http://';
+            pg.src = protocol + 'js.primegate.ru/primegate.min.js'; pg.setAttribute('async', 'true');
+            document.documentElement.getElementsByTagName('head')[0].appendChild(pg);
+            PrimeGate = {}; window.pg = []; components = ['init', 'track', 'identify'];
+            for (var i in components) {
+                PrimeGate[components[i]] = (function(component) {
+                    return function () {
+                        window.pg.push(component, [].slice.call(arguments, 0));
+              }
+            }(components[i]));
+            }
+        })();
+        PrimeGate.init(1502988579);
+    </script>
+<!-- /PrimeGate.Counter -->
+
 </head>
 <body>
 
