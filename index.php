@@ -38,12 +38,12 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 col-md-3 col-6">
+            <div class="col-lg-2 col-md-3 col-4">
                 <div class="header__logo">
                     <img src="/assets/img/logo.png" alt="">
                 </div>
             </div>
-            <div class="col-lg-7 col-md-9 col-6">
+            <div class="col-lg-7 col-md-9 col-8">
                 <ul class="header__menu">
                     <li>
                         <a href="#order" class="header__link">Заказать</a>
@@ -310,7 +310,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
         
         <div class="about__tab" id="trade">
@@ -353,7 +353,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
         
         <div class="about__tab" id="weapon">
@@ -373,7 +373,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
         
         <div class="about__tab" id="sport">
@@ -423,7 +423,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
         
         <div class="about__tab" id="culture">
@@ -467,7 +467,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
         
         <div class="about__tab" id="hotel">
@@ -519,7 +519,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
         
         <div class="about__tab" id="health">
@@ -564,7 +564,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
         
         <div class="about__tab" id="edu">
@@ -609,7 +609,7 @@
                 </div>
             </div>
             
-            <div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>
+            <!--<div class="tab__back"><i class="fas fa-undo-alt"></i>Вернуться</div>-->
         </div>
     </div>
 </section>
