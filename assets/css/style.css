@@ -111,7 +111,7 @@ header .row {
 
 
 .top {
-    background: url("/assets/img/bg-top.jpg") no-repeat center /cover;
+    background: url("..//img/bg-top.jpg") no-repeat center /cover;
     position: relative;
     padding-top: 140px;
     text-align: center;
@@ -227,7 +227,7 @@ header .row {
 
 
 .about {
-    background: url("/assets/img/bg-passport.png") repeat;
+    background: url("..//img/bg-passport.png") repeat;
     color: rgb(51, 51, 51);
     padding-top: 40px;
     padding-bottom: 32px;
@@ -278,7 +278,7 @@ header .row {
 }
 
 .passport {
-    background: url("/assets/img/bg-steps.jpg") no-repeat center /cover;
+    background: url("..//img/bg-steps.jpg") no-repeat center /cover;
     position: relative;
     color: #fff;
     padding: 12px 0 32px;
